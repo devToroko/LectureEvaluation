@@ -43,25 +43,8 @@ CREATE TABLE `user` (
   PRIMARY KEY (`userID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8
 
-를 생성하시고 web.xml 에 가셔서
-<context-param>
-  	<param-name>poolConfig</param-name>
-  	<param-value>
-  	<![CDATA[
-  	jdbcdriver=com.mysql.cj.jdbc.Driver
-  	jdbcUrl=jdbc:mysql://localhost:3306/lectureevaluation?characterEncoding=UTF-8&serverTimezone=UTC
-  	dbUser=
-  	dbPass=
-  	validationQuery=select 1
-  	minIdle=3
-  	maxTotal=30
-  	poolName=board
-  	]]>
-  	</param-value>
-  </context-param>
-  
-  여기에서 dbUser 와 dbPass 를 본인의 것에 맞게 수정하십쇼.
-  
+를 생성하시고 web.xml 에 가시면 context-param에 PoolConfig라는 부분이 있습니다. 내부의 param-value에서 dbUser 와 dbPass 를 본인의 것에 맞게 수정하십쇼
+
 2) util.Gmail 이라는 클래스가 있습니다. 내부에 본인의 구글 아이디와 구글 비번을 입력하시면 됩니다.
 
 public class Gmail extends Authenticator {
