@@ -3,7 +3,7 @@ JSP/Servlet을 이용한 간단한 강의 평가 사이트입니다.
 
 사용한 도구:
 1) Eclipse EE
-2) MySQL
+2) MySQL (ver. 8.0.15)
 
 실행을 하기 앞서서 준비할 것이 있습니다.
 
@@ -58,5 +58,20 @@ public class Gmail extends Authenticator {
 }
 
 
-그리고 실행하면 됩니다.
+3) 현재 프로젝트에서 db connection pool 을 사용중입니다. 이와 관련된 라이브러리를 추가하셔야 합니다
+commons-dbcp2-2.1.1.jar
+commons-loggin-1.2.jar
+commons-pool2-2.4.2.jar
+mysql-connector-java-8.0.15.jar (이건 본인 MySQL 버전에 맞게 해주시면 됩니다)
+
+4) 추가로
+MySQL 버전이 저와 다르다면 
+web.xml 에 가시면 context-param에 PoolConfig라는 부분에서 
+
+jdbcdriver=com.mysql.cj.jdbc.Driver
+jdbcUrl=jdbc:mysql://localhost:3306/lectureevaluation?characterEncoding=UTF-8&serverTimezone=UTC
+
+을 변경해야할지도 모릅니다. 유의하세요.
+
+
 
